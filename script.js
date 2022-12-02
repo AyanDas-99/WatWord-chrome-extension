@@ -5,23 +5,30 @@ const loadingAnimation = document.querySelector('.loading');
 const mainContentDiv = document.querySelector('.content');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    document.querySelector('.content').innerHTML = ''
+    e.preventDefault();
+    mainContentDiv.innerHTML = ''
     const word = inputWord.value;
     loadingAnimation.style.display = 'block'
     searchWord(word);
 })
 
+// Get word from API and call displayResult
 async function searchWord(word) {
     const URL = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
-    p = fetch(URL + word);
-    let response = (await p).json();
-    response = await response;
+    try {
+        p = fetch(URL + word);
+        let response = (await p).json();
+        response = await response;
+        console.log(response)
+        displayResult(response);
+    }
+    catch(e) {
+        displayError();
+    }
     loadingAnimation.style.display = 'none'
-    console.log(response)
-    displayResult(response);
 }
 
+// Use response from searchWord() and display in the body
 function displayResult(response) {
     const definitions = response[0].meanings[0].definitions;
     const synonyms = response[0].meanings[0].synonyms;
@@ -77,4 +84,8 @@ function displayResult(response) {
     p.textContent = response[0].meanings[0].partOfSpeech;
     pos.appendChild(p);
     mainContentDiv.appendChild(pos);
+}
+
+function displayError() {
+    mainContentDiv.innerHTML = '<h3 class="error-msg">Meaning not found</h3>';
 }

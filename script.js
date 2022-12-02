@@ -50,19 +50,20 @@ function displayResult(response) {
     mainContentDiv.appendChild(moreMeanings);
 
     //Pronunciation
-    const phoneticDiv = document.createElement('details');
-    phoneticDiv.className = "meaning";
-    phoneticDiv.innerHTML = '<summary class="heading">Pronunciation<span class="icon"><img src="media/toggle.png" alt="toggle more info" class="toggle"></span></summary>';
-    const speakerImg = document.createElement('img');
-    speakerImg.className = "speaker";
-    speakerImg.src = "media/speaker.png";
-    audio = new Audio(response[0].phonetics[0].audio);
-    speakerImg.addEventListener('click', () => {
-        audio.play();
-    })
-    phoneticDiv.appendChild(speakerImg);
-    mainContentDiv.appendChild(phoneticDiv);
-
+    if (response[0].phonetics[0].audio.length != 0) {
+        const phoneticDiv = document.createElement('details');
+        phoneticDiv.className = "meaning";
+        phoneticDiv.innerHTML = '<summary class="heading">Pronunciation<span class="icon"><img src="media/toggle.png" alt="toggle more info" class="toggle"></span></summary>';
+        const speakerImg = document.createElement('img');
+        speakerImg.className = "speaker";
+        speakerImg.src = "media/speaker.png";
+        audio = new Audio(response[0].phonetics[0].audio);
+        speakerImg.addEventListener('click', () => {
+            audio.play();
+        })
+        phoneticDiv.appendChild(speakerImg);
+        mainContentDiv.appendChild(phoneticDiv);
+    }
 
     // parts of speech
     const pos = document.createElement('details');

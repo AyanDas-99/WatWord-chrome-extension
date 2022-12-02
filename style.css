@@ -101,6 +101,7 @@ summary::-webkit-details-marker {
     display: block;
     margin: 0 auto;
 }
+
 .speaker:hover {
     cursor: pointer;
 }

@@ -77,6 +77,4 @@ function displayResult(response) {
     p.textContent = response[0].meanings[0].partOfSpeech;
     pos.appendChild(p);
     mainContentDiv.appendChild(pos);
-
-
 }

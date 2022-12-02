@@ -38,16 +38,19 @@ function displayResult(response) {
     mainContentDiv.appendChild(meaningDiv);
 
     // More definitions
-    const moreMeanings = document.createElement('details');
-    moreMeanings.className = "meaning";
-    moreMeanings.innerHTML = '<summary class="heading">More definitions<span class="icon"><img src="media/toggle.png" alt="toggle more info" class="toggle"></span></summary>';
-    let p = document.createElement('p');
-    p.className = "definition";
-    definitions.forEach((meaning, index) => {
-        p.innerHTML += meaning.definition + '<br><br>'
-    })
-    moreMeanings.appendChild(p);
-    mainContentDiv.appendChild(moreMeanings);
+    definitions.shift();
+    if (definitions.length != 0) {
+        const moreMeanings = document.createElement('details');
+        moreMeanings.className = "meaning";
+        moreMeanings.innerHTML = '<summary class="heading">More definitions<span class="icon"><img src="media/toggle.png" alt="toggle more info" class="toggle"></span></summary>';
+        let p = document.createElement('p');
+        p.className = "definition";
+        definitions.forEach((meaning, index) => {
+            p.innerHTML += meaning.definition + '<br><br>'
+        })
+        moreMeanings.appendChild(p);
+        mainContentDiv.appendChild(moreMeanings);
+    }
 
     //Pronunciation
     if (response[0].phonetics[0].audio.length != 0) {

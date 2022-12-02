@@ -105,3 +105,9 @@ summary::-webkit-details-marker {
 .speaker:hover {
     cursor: pointer;
 }
+
+.error-msg {
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+}

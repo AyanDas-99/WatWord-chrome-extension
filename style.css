@@ -8,9 +8,7 @@
 body {
     padding: 1em;
     font-family: sans-serif;
-    background: #00C9FF;
-    background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);
-    background: linear-gradient(to right, #92FE9D, #00C9FF);
+    background: whitesmoke;
 }
 
 .container {
@@ -25,7 +23,7 @@ form {
 
 header {
     font-family: 'Lato', sans-serif;
-    color: white;
+    color: black;
     text-align: center;
     margin: 1em;
 }
@@ -53,6 +51,7 @@ header {
     margin: .5em 0;
     padding: .5em;
     font-size: medium;
+    box-shadow:1px 0px 10px 0 grey;
 }
 
 .meaning>.heading {

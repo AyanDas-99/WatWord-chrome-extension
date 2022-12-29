@@ -8,7 +8,7 @@
 body {
     padding: 1em;
     font-family: sans-serif;
-    background: whitesmoke;
+    background: #474E68;
 }
 
 .container {
@@ -23,7 +23,7 @@ form {
 
 header {
     font-family: 'Lato', sans-serif;
-    color: black;
+    color: white;
     text-align: center;
     margin: 1em;
 }
@@ -47,17 +47,19 @@ header {
 
 /* Meaning */
 .meaning {
-    background-color: white;
+    background-color: #50577A;
     margin: .5em 0;
-    padding: .5em;
-    font-size: medium;
-    box-shadow:1px 0px 10px 0 grey;
+    padding: .8em;
+    font-size: .95rem;
+    box-shadow: 0 0 10px rgb(42, 44, 46);
+    border-radius: 20px;
+    color: white;
 }
 
 .meaning>.heading {
     font-size: large;
     margin-bottom: .5em;
-    font-weight: 520;
+    font-weight: 550;
 }
 
 /* collapsible */
@@ -110,4 +112,12 @@ summary::-webkit-details-marker {
     color: white;
     text-align: center;
     margin-top: 1em;
+}
+
+input[type="text"] {
+    background-color: #50577A;
+    color: whitesmoke;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(42, 44, 46);
 }

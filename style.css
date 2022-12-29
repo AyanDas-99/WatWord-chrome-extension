@@ -54,6 +54,7 @@ header {
     box-shadow: 0 0 10px rgb(42, 44, 46);
     border-radius: 20px;
     color: white;
+    opacity: 80%;
 }
 
 .meaning>.heading {
